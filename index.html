@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="C:\Users\joshu\OneDrive\Pictures\little_edward.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hanscom</title>
+</head>
+<body>
+
+<!-- ---------- fixed on top ---------- -->
+<div id="fixedtop">
+    <!-- ---------scroll indicator ---------- -->
+    <script src="js/scrollbar.js"></script>
+    <script src="js/dropdownmenu.js"></script>
+    <div class="progress-container">
+        <div class="progress-bar" id="bar"></div>
+    </div>
+    <!-- ------------ dropdown ----------- -->
+    <div class="dropdown">
+        <button onclick="dropdown" class="settings-tab">
+            <img src="images/bars.jpg" id="imgset">
+        </button>
+
+        </ul>
+    </div>
+</div>
+
+<!-- ---------- header container ---------- -->
+<div id="header">
+    <div class="container" id="home">
+        <nav>
+            <img src="images/Logo.PNG" class="Logo">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-text">
+            <h1>Joshua Hanscom's <span>Portfolio</span></h1>
+            <p><span>Computer Science Student</span></p>
+        </div>
+    </div>
+</div>
+
+<!-- ---------about------------------ -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/image_6487327.JPG">
+
+            </div>
+            <div class="about-col-2">
+                <h1 class="subtitle">About Me</h1>
+                <p>I am a student at PCC looking to transfer soon. I am looking to obtain some experience in the field before I graduate. </p>
+                </p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Coursework</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Linux</span><br>BASH, C Shell, AWK, BC</li>
+                        <li><span>C++</span><br>Object-Oriented Programming</li>
+                        <li><span>Java</span><br>Object-Oriented Programming</li>
+                        <li><span>JavaScript</span><br>Object-Oriented Programming</li>
+                        <li><span>HTML</span><br>Structuring Websites</li>
+                        <li><span>CSS</span><br>Styling Websites</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>Code Ninjas Code Sensei</span><br>Taught children 5-14 surface-level coding concepts through engaging curriculum within the scope of game development.
+                        </li>
+                        <li><span>Amazon Warehouse Inventory Shipping Stocker	</span><br>Organized, transported, stocked merchandise, and utilized soft skills and leadership qualities to meet demanding quotas in times of rush.
+                        </li>
+                        <li><span>Landscaper</span><br>Took notice in consideration to personalize my work around providing a satisfactory outcome for customers.
+                        </li>
+                       
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>Data Structures & Algorithms</span><br>Designing Web/app interfaces</li>
+                        <li><span>Assembly Language</span><br>Designing Web/app interfaces</li>
+                        <li><span>Unix/Linix Scripting with Bash</span><br>Designing Web/app interfaces</li>
+                        <li><span>Web Development</span><br>Designing Web/app interfaces</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="portfolio">
+    <div class="container">
+        <div class="row">
+            <table id="grid">
+                <tr>
+                    <td colspan="3"><h1 class="subtitle">Projects</h1></td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="images/placeholder.jpg" alt="stock">
+                    </td>
+                    <td>
+                        <img src="images/placeholder.jpg" alt="stock">
+                    </td>
+                    <td>
+                        <img src="images/placeholder.jpg" alt="stock">
+                    </td>
+                </tr>
+            </table>
+            
+        </div>
+    </div>
+</div>
+
+<div id="contact">
+    <div class="container">
+        
+    </div>
+</div>
+
+<script src="js/clicktab.js"></script>
+</body>
+</html>
