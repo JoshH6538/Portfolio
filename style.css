@@ -195,6 +195,9 @@ nav ul li a:hover::after{
     font-size: 4vh;
     width: 100%;
 }
+.grid tr td{
+    font-size: 2vh;
+}
 
 .grid img{
     max-width: 28vw;
@@ -202,8 +205,14 @@ nav ul li a:hover::after{
     border-radius: 7%;
     padding: 2%;
 }
+.grid video{
+    max-width: 28vw;
+    max-height: 28vh;
+    border-radius: 7%;
+    padding: 2%;
+}
 
-.grid tr td a img:hover, .grid tr td a img:focus{
+.grid tr td a img:hover, .grid tr td a video:hover{
     animation: grow .25s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
@@ -211,7 +220,7 @@ nav ul li a:hover::after{
     
 }
 
-.grid tr td a img:not(:hover){
+.grid tr td a img:not(:hover), .grid tr td a video:not(:hover){
     animation: restore .25s;
     animation-iteration-count: 1;
     animation-fill-mode: backwards;
