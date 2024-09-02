@@ -253,6 +253,10 @@ nav ul li a:hover::after{
     line-height: 3;
 }
 
+#contact .container p span{
+    color: rgb(250, 0, 0);
+}
+
 
 /* --------- animations --------- */
 @keyframes grow{
