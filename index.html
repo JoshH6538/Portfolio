@@ -1,170 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="images/Logo.png">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hanscom</title>
-</head>
-<body>
-
-<!-- ---------- fixed on top ---------- -->
-<div id="fixedtop">
-    <!-- ---------scroll indicator ---------- -->
-    <script src="js/scrollbar.js"></script>
-    <script src="js/dropdownmenu.js"></script>
-    <script src="https://kit.fontawesome.com/7c20ebfe5a.js" crossorigin="anonymous"></script>
-    <div class="progress-container">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="images/Logo.png" />
+    <script src="js/main.js"></script>
+    <script src="js/scrollbar.js" defer></script>
+    <script src="js/topmenu.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/7c20ebfe5a.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+  </head>
+  <body>
+    <!-- ---------- Fixed Top ---------- -->
+    <div id="fixedtop">
+      <div class="progress-container">
         <div class="progress-bar" id="bar"></div>
-    </div>
-    <!-- ------------ dropdown ----------- -->
-    <div class="dropdown">
-        <button onclick="dropdown" class="settings-tab">
-            <img src="images/bars.jpg" id="imgset">
+      </div>
+
+      <div class="dropdown-wrapper">
+        <button id="dropdown-toggle" class="dropdown-toggle">
+          <i class="fa-solid fa-bars"></i>
         </button>
 
-        </ul>
+        <div id="dropdown-menu" class="dropdown-menu">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
     </div>
-</div>
 
-<!-- ---------- header container ---------- -->
-<div id="header">
-    <div class="container" id="home">
+    <!-- ---------- Header Container ---------- -->
+    <header id="header">
+      <div class="container" id="home">
         <nav>
-            <img src="images/Logo.PNG" class="Logo">
-            <ul id = "topmenu">
-                <li><a href="#home" onclick="closeMenu()">Home</a></li>
-                <li><a href="#about" onclick="closeMenu()">About</a></li>
-                <li><a href="#portfolio" onclick="closeMenu()">Portfolio</a></li>
-                <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
-                <i class="fa-solid fa-x " onclick="closeMenu()"></i>
-            </ul>
-            <i class="fa-solid fa-bars" onclick="openMenu()" id="bars"></i>
+          <img src="images/Logo.PNG" class="Logo" alt="Logo" />
+          <ul id="topmenu">
+            <li><a href="#home" onclick="closeMenu()">Home</a></li>
+            <li><a href="#about" onclick="closeMenu()">About</a></li>
+            <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+            <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+            <i class="fa-solid fa-x" onclick="closeMenu()"></i>
+          </ul>
         </nav>
         <div class="header-text">
-            <h1>Joshua Hanscom's <span>Portfolio</span></h1>
-            <p><span>Computer Science Student</span></p>
+          <h1>Joshua Hanscom's <span>Portfolio</span></h1>
+          <p><span>Computer Science Student</span></p>
         </div>
-    </div>
-</div>
+      </div>
+    </header>
 
-<!-- ---------about------------------ -->
-<div id="about">
-    <div class="container">
-        <div class="row">
-            <div class="about-col-1">
-                <img src="images/image_6487327.JPG">
-
+    <!-- About Section -->
+    <section id="about">
+      <div class="container row">
+        <div class="about-col-1">
+          <img src="images/image_6487327.JPG" alt="Joshua Hanscom" />
+        </div>
+        <div class="about-col-2">
+          <h1 class="subtitle">About Me</h1>
+          <div id="about-intro" class="invisible">
+            <div class="about-paragraphs">
+              <p>
+                Hi, I’m Joshua Hanscom, a junior Computer Science student at Cal
+                State LA, passionate about front-end and full-stack development.
+              </p>
+              <p>
+                I’m currently building Sync, a solo project that uses Spotify
+                and Ticketmaster APIs to recommend local events based on user
+                listening habits.
+              </p>
+              <p>
+                I’ve contributed to an Agile-based team project: a full-stack
+                campus navigation app.
+              </p>
+              <p>
+                Outside of school, I teach coding at Code Ninjas, where I help
+                kids learn JavaScript, Python, and game development.
+              </p>
+              <p>
+                I’m now seeking internship opportunities to grow as a developer
+                and contribute to impactful software.
+              </p>
             </div>
-            <div class="about-col-2">
-                <h1 class="subtitle">About Me</h1>
-                <p>I am a transfer student at Cal State LA. I am looking to obtain some experience in the field before I graduate. </p>
-                </p>
-                <div class="tab-titles">
-                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                    <p class="tab-links" onclick="opentab('education')">Coursework</p>
-                </div>
-                <div class="tab-contents active-tab" id="skills">
-                    <ul>
-                        <li><span>Linux</span><br>BASH, C Shell, AWK, BC</li>
-                        <li><span>C++</span><br>Object-Oriented Programming</li>
-                        <li><span>Java</span><br>Object-Oriented Programming</li>
-                        <li><span>JavaScript</span><br>Object-Oriented Programming</li>
-                        <li><span>HTML</span><br>Structuring Websites</li>
-                        <li><span>CSS</span><br>Styling Websites</li>
-                    </ul>
-                </div>
-                <div class="tab-contents" id="experience">
-                    <ul>
-                        <li><span>Code Ninjas Code Sensei</span><br> Teaching coding to students aged 7-14 in JavaScript, Python, Unity with C#, and Roblox with Lua. Utilizing hands-on methods and adapt to individual learning styles, leading to increased student enthusiasm and reduced
-                            frustration.
-                        </li>
-                        <li><span>Amazon Warehouse Inventory Shipping Stocker	</span><br>Organized, transported, stocked merchandise, and utilized soft skills and leadership qualities to meet demanding quotas in times of rush.
-                        </li>
-                        <li><span>Landscaper</span><br>Took notice in consideration to personalize my work around providing a satisfactory outcome for customers.
-                        </li>
-                       
-                    </ul>
-                </div>
-                <div class="tab-contents" id="education">
-                    <ul>
-                        <li><span>Data Structures & Algorithms</span><br>Recursion, lists, trees, heaps, stacks, queues, sorting, searching, pointers, hash</li>
-                        <li><span>Assembly Language</span><br>Register manipulation, pseudocode, instruction formats, addressing modes, parameter passing, assemblers, linkage editors, and modular program design</li>
-                        <li><span>Unix/Linix Scripting with Bash</span><br>Designing Web/app interfaces</li>
-                        <li><span>Web Development</span><br>HTML5 elements and APIs, CSS3 syntax and advanced techniques, code validation, form creation, mobile design for browsers and apps, and JavaScript</li>
-                    </ul>
-                </div>
+            <div class="learn-more-wrapper">
+              <button id="learn-more-btn">Learn More</button>
             </div>
+          </div>
+
+          <div id="about-details" class="invisible">
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="opentab('skills')">
+                Skills
+              </p>
+              <p class="tab-links" onclick="opentab('experience')">
+                Experience
+              </p>
+              <p class="tab-links" onclick="opentab('education')">Coursework</p>
+            </div>
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li>
+                  <span>Languages</span><br />C++, Python, Java, JavaScript,
+                  TypeScript, C, Kotlin, LaTeX, MASM, HTML5, CSS3, Unix/Linux
+                  Scripting
+                </li>
+                <li>
+                  <span>Frameworks & Tools</span><br />React, Spring Boot,
+                  Agile, Scrum, Jira, Bootstrap, Git, Godot
+                </li>
+                <li><span>Databases</span><br />MySQL, PostgreSQL, MongoDB</li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="experience">
+              <ul>
+                <li>
+                  <span>Code Ninjas Code Sensei</span><br />Teaching 20–30
+                  students per session in JavaScript, Python, Unity with C#, and
+                  Roblox with Lua; leading game development and 3D modeling
+                  camps; writing student progress notes and weekly evaluations
+                  for parents.
+                </li>
+                <li>
+                  <span>Amazon Warehouse</span><br />Handled inventory,
+                  shipping, and stocking while demonstrating leadership under
+                  pressure and adapting to demanding quotas.
+                </li>
+                <li>
+                  <span>Landscaping</span><br />Delivered personalized service
+                  and attention to detail to exceed customer expectations.
+                </li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="education">
+              <div class="class-carousel">
+                <div class="class-page active">
+                  <ul>
+                    <li>
+                      <span>Data Structures & Algorithms</span><br />Efficient
+                      algorithm design and analysis for sorting, searching,
+                      graphs, and combinatorics.
+                    </li>
+                    <li>
+                      <span>Assembly Language</span><br />Low-level programming
+                      using registers, addressing modes, and modular design
+                      principles.
+                    </li>
+                    <li>
+                      <span>Unix/Linux Scripting with Bash</span
+                      ><br />Automating tasks and creating simple interface
+                      logic using shell scripts.
+                    </li>
+                  </ul>
+                </div>
+                <div class="class-page">
+                  <ul>
+                    <li>
+                      <span>Web and Internet Programming</span><br />Full-stack
+                      web apps using Spring Boot, REST APIs, JPA, and dynamic
+                      HTML/CSS/JS interfaces.
+                    </li>
+                    <li>
+                      <span>Object Oriented Programming</span><br />Design
+                      principles like encapsulation, inheritance, and
+                      polymorphism in Java and C++.
+                    </li>
+                    <li>
+                      <span>Relational Databases</span><br />SQL, data modeling
+                      (ER, relational), joins, transactions, and basic NoSQL
+                      with MongoDB.
+                    </li>
+                  </ul>
+                </div>
+                <div class="class-page">
+                  <ul>
+                    <li>
+                      <span>Artificial Intelligence</span><br />Search
+                      algorithms, problem solving, and logic-based AI with
+                      minimax and agent design.
+                    </li>
+                    <li>
+                      <span>Software Engineering</span><br />Agile development,
+                      project planning, full stack teamwork using Express, Node,
+                      PostgreSQL.
+                    </li>
+                    <li>
+                      <span
+                        >Fundamentals of Network Systems and Cybersecurity</span
+                      ><br />Core networking concepts and security basics like
+                      AES, threat modeling, and web safety.
+                    </li>
+                  </ul>
+                </div>
+                <div class="class-page">
+                  <ul>
+                    <li>
+                      <span>Operating Systems</span
+                      ><br />Process/memory/resource management, concurrency,
+                      and deadlock prevention algorithms.
+                    </li>
+                    <li>
+                      <span>Programming Paradigms</span><br />Functional, logic,
+                      reactive, and domain-specific programming across Java,
+                      Python, Kotlin.
+                    </li>
+                    <li>
+                      <span>Automata</span><br />Foundations of computation via
+                      FSMs, regular expressions, CFGs, and Turing machines.
+                    </li>
+                  </ul>
+                </div>
+                <div class="carousel-controls">
+                  <button onclick="prevPage()" class="carousel-btn">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="currentColor"
+                      class="bi bi-chevron-compact-left"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M9.224 1.553a.5.5 0 0 1 .223.67L6.56 8l2.888 5.776a.5.5 0 1 1-.894.448l-3-6a.5.5 0 0 1 0-.448l3-6a.5.5 0 0 1 .67-.223"
+                      />
+                    </svg>
+                  </button>
+
+                  <div class="carousel-dots" id="carousel-dots"></div>
+
+                  <button onclick="nextPage()" class="carousel-btn">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="currentColor"
+                      class="bi bi-chevron-compact-right"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="back-button-wrapper">
+              <button id="back-to-intro" class="back-button">Back</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- Projects Section ---------- -->
+    <section id="projects">
+      <div class="container">
+        <h1 class="subtitle">Projects</h1>
+
+        <!-- Modal -->
+        <div id="project-modal" class="modal hidden">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 id="modal-title">Project Title</h2>
+              <span class="modal-close" id="modal-close">&times;</span>
+            </div>
+            <div id="modal-media"></div>
+            <p id="modal-description"></p>
+          </div>
         </div>
 
-    </div>
-</div>
+        <!-- Project Grid -->
+        <div id="projects-grid" class="invisible">
+          <div class="project-grid">
+            <div
+              class="project-card"
+              data-title="Typing Game in Assembly"
+              data-description="A game built in Assembly using video memory and low-level control."
+              data-media="video"
+              data-src="images/AssemblyPreview.mp4"
+            >
+              <video
+                autoplay
+                muted
+                loop
+                src="images/AssemblyPreview.mp4"
+              ></video>
+              <p>Typing Game in Assembly</p>
+            </div>
 
-<div id="portfolio">
-    <div class="container">
-        <div class="row">
-            <table class="grid">
-                <tr>
-                    <td colspan="3"><h1 class="subtitle">Projects</h1></td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://github.com/JoshH6538/Assembly_Final_Project" target="_blank">
-                            <video autoplay="autoplay" src="images/AssemblyPreview.mp4"
-                            muted loop ></video></a>
-                    </td>
-                    <td>
-                        <a href="https://github.com/JoshH6538/Final_CS8" target="_blank">
-                            <img src="images/placeholder.jpg" alt="stock"></a>
-                    </td>
-                    <td>
-                        <a href="https://alunarwaffle.itch.io/kitty-kat-kaiju" target="_blank">
-                            <img src="images/kat.png" alt="stock"></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Typing Game in Assembly</td>
-                    <td>B+ Tree SQL Database</td>
-                    <td>2024 GTMK Game Jam Submission</td>
-                </tr>
-            </table>
-            
+            <div
+              class="project-card"
+              data-title="B+ Tree SQL Database"
+              data-description="A C++ project simulating a basic database using B+ Trees."
+              data-media="image"
+              data-src="images/placeholder.jpg"
+            >
+              <img src="images/placeholder.jpg" alt="Database Project" />
+              <p>B+ Tree SQL Database</p>
+            </div>
+
+            <div
+              class="project-card"
+              data-title="Kitty Kat Kaiju"
+              data-description="A destruction-based 3D game built for GMTK Game Jam using Godot."
+              data-media="image"
+              data-src="images/kat.png"
+            >
+              <img src="images/kat.png" alt="Game Jam Project" />
+              <p>2024 GTMK Game Jam Submission</p>
+            </div>
+
+            <div
+              class="project-card"
+              data-title="Spotify Sync Web App"
+              data-description="A solo project using Spotify and Ticketmaster APIs to recommend local events."
+              data-media="image"
+              data-src="images/Sync.jpg"
+            >
+              <img src="images/Sync.jpg" alt="Sync Project" />
+              <p>Spotify Sync Web App</p>
+            </div>
+          </div>
         </div>
-    </div>
-</div>
+      </div>
+    </section>
 
-<div id="contact">
-    <div class="container">
+    <!-- ---------- Contact Section ---------- -->
+    <section id="contact">
+      <div class="container">
         <h1 class="subtitle">Contact Me</h1>
-        <p><a href="mailto:joshuahanscom6538@gmail.com">Email me!<br></a></p>
-        <p>Reach my phone at<a href="tel:+17606054748"> +1 (760) 760-4748</a>!</p>
-        <p><a href="https://github.com/JoshH6538/">Github</a></p>
-    </div>
-</div>
+        <p><a href="mailto:joshuahanscom6538@gmail.com">Email me!</a></p>
+        <p>
+          Reach my phone at <a href="tel:+17606054748">+1 (760) 760-4748</a>
+        </p>
+        <p><a href="https://github.com/JoshH6538/">GitHub</a></p>
+      </div>
+    </section>
 
-<script src="js/clicktab.js"></script>
-<script>
-    var menu=document.getElementById("topmenu");
-    var bars=document.getElementById("bars");
-    function openMenu(){
-        if(window.screen.width <= "600")
-        {
-            bars.style.opacity = "0";
-            menu.style.scale = "1 1";
-            menu.style.opacity = "1";
+    <!-- ---------- Scripts ---------- -->
+    <script src="js/clicktab.js"></script>
+    <script>
+      const menu = document.getElementById("topmenu");
+      const bars = document.getElementById("bars");
+
+      function openMenu() {
+        if (window.innerWidth <= 600) {
+          bars.style.opacity = "0";
+          menu.style.scale = "1 1";
+          menu.style.opacity = "1";
         }
-        
-    }
-    function closeMenu(){
-        if(window.screen.width <= "600")
-        {
-            bars.style.opacity = "1";
-            menu.style.scale = "1 0";
-            menu.style.opacity = "0";
+      }
+
+      function closeMenu() {
+        if (window.innerWidth <= 600) {
+          bars.style.opacity = "1";
+          menu.style.scale = "1 0";
+          menu.style.opacity = "0";
         }
-    }
-</script>
-</body>
+      }
+    </script>
+  </body>
 </html>
