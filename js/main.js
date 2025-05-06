@@ -112,19 +112,30 @@ document.addEventListener("DOMContentLoaded", () => {
     const description = card.dataset.description;
     const mediaType = card.dataset.media;
     const src = card.dataset.src;
+    const link = card.dataset.link; // optional
 
     modalTitle.textContent = title;
     modalDescription.textContent = description;
 
-    modalMedia.innerHTML =
-      mediaType === "video"
-        ? `<video src="${src}" autoplay muted loop style="width: 100%; border-radius: 10px;"></video>`
-        : `<img src="${src}" alt="${title}" style="width: 100%; border-radius: 10px;">`;
+    let mediaHTML = "";
+
+    if (mediaType === "video") {
+      mediaHTML = `<video src="${src}" autoplay muted loop class="modal-media"></video>`;
+    } else {
+      mediaHTML = `<img src="${src}" alt="${title}" class="modal-media">`;
+    }
+
+    // Wrap in <a> if link exists
+    if (link) {
+      modalMedia.innerHTML = `<a href="${link}" target="_blank">${mediaHTML}</a>`;
+    } else {
+      modalMedia.innerHTML = mediaHTML;
+    }
 
     modal.classList.add("show");
 
     requestAnimationFrame(() => {
-      modalContent.classList.remove("slide-up");
+      modalContent.classList.remove("slide-down", "slide-up");
       void modalContent.offsetWidth;
       modalContent.classList.add("slide-up");
     });
