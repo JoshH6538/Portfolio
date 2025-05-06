@@ -99,6 +99,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (projectsGrid) projectsObserver.observe(projectsGrid);
 
+  // ------------------ CONTACT: SLIDE IN ---------------------
+  const contactInfo = document.getElementById("contact-info");
+
+  const contactObserver = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          contactInfo.classList.remove("invisible");
+          contactInfo.classList.add("visible", "slide-in");
+          obs.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  if (contactInfo) contactObserver.observe(contactInfo);
+
   // ------------------ MODAL ---------------------
   const modal = document.getElementById("project-modal");
   const modalContent = document.querySelector(".modal-content");
@@ -160,3 +178,25 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.target === modal) closeModal();
   });
 });
+
+// ------------------ SCROLL TO SECTION ---------------------
+function scrollToSection(id) {
+  if (id === "top") {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  } else {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+}
+
+function scrollToNext(button) {
+  const currentSection = button.closest("section");
+  const sections = Array.from(document.querySelectorAll("section"));
+  const currentIndex = sections.indexOf(currentSection);
+  const nextSection = sections[currentIndex + 1];
+  if (nextSection) {
+    nextSection.scrollIntoView({ behavior: "smooth" });
+  }
+}

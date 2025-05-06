@@ -54,6 +54,11 @@
           <p><span>Computer Science Student</span></p>
         </div>
       </div>
+      <div class="section-nav">
+        <button class="nav-btn" onclick="scrollToNext(this)">
+          Next <i class="fa-solid fa-arrow-down"></i>
+        </button>
+      </div>
     </header>
 
     <!-- About Section -->
@@ -258,6 +263,14 @@
           </div>
         </div>
       </div>
+      <div class="section-nav">
+        <button class="nav-btn" onclick="scrollToSection('top')">
+          <i class="fa-solid fa-arrow-up"></i> Top
+        </button>
+        <button class="nav-btn" onclick="scrollToNext(this)">
+          Next <i class="fa-solid fa-arrow-down"></i>
+        </button>
+      </div>
     </section>
 
     <!-- ---------- Projects Section ---------- -->
@@ -347,17 +360,60 @@ Designed and implemented levels, terrain, and scene lighting; created destructib
           </div>
         </div>
       </div>
+      <div class="section-nav">
+        <button class="nav-btn" onclick="scrollToSection('top')">
+          <i class="fa-solid fa-arrow-up"></i> Top
+        </button>
+        <button class="nav-btn" onclick="scrollToNext(this)">
+          Next <i class="fa-solid fa-arrow-down"></i>
+        </button>
+      </div>
     </section>
 
     <!-- ---------- Contact Section ---------- -->
     <section id="contact">
-      <div class="container">
-        <h1 class="subtitle">Contact Me</h1>
-        <p><a href="mailto:joshuahanscom6538@gmail.com">Email me!</a></p>
-        <p>
-          Reach my phone at <a href="tel:+17606054748">+1 (760) 760-4748</a>
-        </p>
-        <p><a href="https://github.com/JoshH6538/">GitHub</a></p>
+      <div class="container row">
+        <div class="about-col-1">
+          <img src="images/Me.JPG" alt="Joshua Hanscom" />
+        </div>
+
+        <div class="about-col-2">
+          <h1 class="subtitle">Contact Me</h1>
+
+          <div id="contact-info" class="invisible">
+            <ul class="contact-list">
+              <li>
+                <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:joshuahanscom6538@gmail.com"
+                  >joshuahanscom6538@gmail.com</a
+                >
+              </li>
+              <li>
+                <i class="fa-solid fa-phone"></i>
+                <a href="tel:+17606054748">+1 (760) 605-4748</a>
+              </li>
+              <li>
+                <i class="fa-brands fa-github"></i>
+                <a href="https://github.com/JoshH6538" target="_blank"
+                  >github.com/JoshH6538</a
+                >
+              </li>
+              <li>
+                <i class="fa-brands fa-linkedin"></i>
+                <a
+                  href="https://linkedin.com/in/joshua-hanscom-0b7b69294"
+                  target="_blank"
+                  >linkedin.com/in/joshua-hanscom</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="section-nav">
+        <button class="nav-btn" onclick="scrollToSection('top')">
+          <i class="fa-solid fa-arrow-up"></i> Top
+        </button>
       </div>
     </section>
 
